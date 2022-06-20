@@ -74,7 +74,7 @@ var total = 0;
 // Exercise 1
 function buy(id) {
 
-    for( var i = 0; i < products.length; i++){
+    for(let i = 0; i < products.length; i++){
 
         if ( products[i].id == id){
             cartList.push(products[i]);
@@ -91,6 +91,13 @@ function cleanCart() {
 
 // Exercise 3
 function calculateTotal() {
+let totalPrice = 0;
+
+    for (let i = 0; i < products.length; i++){
+        totalPrice += products[i].price;
+    }
+    
+return totalPrice;
     // Calculate total price of the cart using the "cartList" array
 }
 
