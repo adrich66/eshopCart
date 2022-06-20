@@ -93,27 +93,32 @@ function cleanCart() {
 function calculateTotal() {
 let totalPrice = 0;
 
-    for (let i = 0; i < products.length; i++){
-        totalPrice += products[i].price;
+    for (let i = 0; i < cartList.length; i++){
+        totalPrice += cartList[i].price;
     }
-    
+
 return totalPrice;
     // Calculate total price of the cart using the "cartList" array
 }
 
 // Exercise 4
 function generateCart() {
+
+
     // Using the "cartlist" array that contains all the items in the shopping cart, 
     // generate the "cart" array that does not contain repeated items, instead each item of this array "cart" shows the quantity of product.
 }
 
 // Exercise 5
 function applyPromotionsCart() {
+
+
     // Apply promotions to each item in the array "cart"
 }
 
 // Exercise 6
 function printCart() {
+
     // Fill the shopping cart modal manipulating the shopping cart dom
 }
 
@@ -129,6 +134,8 @@ function addToCart(id) {
 
 // Exercise 8
 function removeFromCart(id) {
+
+
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cartList array
 }
