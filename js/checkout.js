@@ -1,5 +1,5 @@
 
-// Exercise 6
+// Exercise 7
 function validate() {
 	var error = 0;
 	// Get the input fields
