@@ -97,7 +97,7 @@ function applyPromotionsCart() {
     //Repetimos con el segundo tipo
     if((cart[i].id === 3) 
       && (cart[i].quantity >= 10)) {
-        cart[i].subtotalWithDiscount = (((cart[i].subtotal) / 3 )* 2).toFixed(2);
+        cart[i].subtotalWithDiscount = (((cart[i].subtotal) / 3 )* 2);
       }
   }
 }
@@ -108,15 +108,17 @@ function printCart() {
 
   //Creamos una lista para inyectar los diferentes campos que compondrán la tabla del carrito
   let list = document.getElementById("cart_list");
-  //
+  //Inyectamos un string vacío en la list nueva en HTML
   list.innerHTML = "";
+
   total = 0; 
 
   //Bucle for para recorrer todo el carrito e inyectar cada producto y sus caract.
   for(let i = 0; i < cart.length; i++){
     
+    //Creamos la base en la cúal crearemos e imprimimos los elementos
     let tr = document.createElement('tr');
-    
+    //Hacemos lo mismo para los elementos de cada objeto del array i lo inyectamos
     let th = document.createElement('th');
     th.innerHTML = cart[i].name;
     let td1 = document.createElement('td');
@@ -124,19 +126,23 @@ function printCart() {
     let td2 = document.createElement('td');
     td2.innerHTML = cart[i].quantity;
     let td3 = document.createElement('td');
-    td3.innerHTML = '$' + cart[i].subtotalWithDiscount;
+    td3.innerHTML = '$' + ((cart[i].subtotalWithDiscount).toFixed(2));
 
+
+    //Encadenamos para devolver hijos
     tr.appendChild(th);
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
+    //Igual para la lista entera
     list.appendChild(tr);
 
+    //Declaramos el total y lo vamos sumando 
     total += cart[i].subtotalWithDiscount;
   }
 
   //Al total ahora de la tabla del carrito le asignamos el nuevo valor 
-  document.getElementById('total_price').innerHTML = total;
+  document.getElementById('total_price').innerHTML = total.toFixed(2);
 
 
 }
