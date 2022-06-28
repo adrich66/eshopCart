@@ -79,6 +79,7 @@ function generateCart() {
   }
   applyPromotionsCart();
   printCart(); 
+  document.getElementById('count_product').innerHTML = cart.length;
   console.log(cart);
 }
 
@@ -144,19 +145,17 @@ function printCart() {
   //Al total ahora de la tabla del carrito le asignamos el nuevo valor 
   document.getElementById('total_price').innerHTML = total.toFixed(2);
 
-
-}
-
-// Exercise 7
-function addToCart(id) {
-  // Refactor previous code in order to simplify it
-  // 1. Loop for to the array products to get the item to add to cart
-  // 2. Add found product to the cart array or update its quantity in case it has been added previously.
 }
 
 // ** Nivell II **
 
 // Exercise 8
+function addToCart(id) {
+  // Refactor previous code in order to simplify it
+  // 1. Loop for to the array products to get the item to add to cart
+  // 2. Add found product to the cart array 
+}
+// Exercise 9
 function removeFromCart(id) {
   // 1. Loop for to the array products to get the item to add to cart
   // 2. Add found product to the cartList array
